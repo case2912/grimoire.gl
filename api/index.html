@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Top-Level API | Grimoire.js</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Grimoire.jsを初めて用いる際、最初にいじるjavascriptのAPIはおそらくこれらのトップレベルAPIでしょう。 これらのAPIによってユーザーはい自身のサービスのロジックにマッチした形で3Dのビュー部分を操作することが容易になります。
+
+トップレベルのAPIは以上の図のように主に4つに分割され、それぞれ役割が異なります。
+GrimoireInterface主に特定のGOMLソースに">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Top-Level API">
+<meta property="og:url" content="http://grimoire.gl/api/index.html">
+<meta property="og:site_name" content="Grimoire.js">
+<meta property="og:description" content="Grimoire.jsを初めて用いる際、最初にいじるjavascriptのAPIはおそらくこれらのトップレベルAPIでしょう。 これらのAPIによってユーザーはい自身のサービスのロジックにマッチした形で3Dのビュー部分を操作することが容易になります。
+
+トップレベルのAPIは以上の図のように主に4つに分割され、それぞれ役割が異なります。
+GrimoireInterface主に特定のGOMLソースに">
+<meta property="og:image" content="http://grimoire.gl/./images/top-level-interface.png">
+<meta property="og:updated_time" content="2016-08-01T10:36:12.194Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Top-Level API">
+<meta name="twitter:description" content="Grimoire.jsを初めて用いる際、最初にいじるjavascriptのAPIはおそらくこれらのトップレベルAPIでしょう。 これらのAPIによってユーザーはい自身のサービスのロジックにマッチした形で3Dのビュー部分を操作することが容易になります。
+
+トップレベルのAPIは以上の図のように主に4つに分割され、それぞれ役割が異なります。
+GrimoireInterface主に特定のGOMLソースに">
+<meta name="twitter:image" content="http://grimoire.gl/./images/top-level-interface.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Grimoire.js" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-80429415-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script type="text/javascript">
+    var classCallCheck=function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")},Target=function e(){classCallCheck(this,e)};Target.extensions=["ANGLE_instanced_arrays","EXT_blend_minmax","EXT_color_buffer_half_float","EXT_disjoint_timer_query","EXT_frag_depth","EXT_sRGB","EXT_shader_texture_lod","EXT_texture_filter_anisotropic","OES_element_index_uint","OES_standard_derivatives","OES_texture_float","OES_texture_float_linear","OES_texture_half_float","OES_texture_half_float_linear","OES_vertex_array_object","WEBGL_color_buffer_float","WEBGL_compressed_texture_atc","WEBGL_compressed_texture_etc1","WEBGL_compressed_texture_pvrtc","WEBGL_compressed_texture_s3tc","WEBGL_debug_renderer_info","WEBGL_debug_shaders","WEBGL_depth_texture","WEBGL_draw_buffers","WEBGL_lose_context"],Target.parameters=["MAX_COMBINED_TEXTURE_IMAGE_UNITS","MAX_CUBE_MAP_TEXTURE_SIZE","MAX_FRAGMENT_UNIFORM_VECTORS","MAX_RENDERBUFFER_SIZE","MAX_TEXTURE_IMAGE_UNITS","MAX_TEXTURE_SIZE","MAX_VARYING_VECTORS","MAX_VERTEX_ATTRIBS","MAX_VERTEX_TEXTURE_IMAGE_UNITS","MAX_VERTEX_UNIFORM_VECTORS","MAX_VIEWPORT_DIMS"];var uuid=function t(){var t="",e=void 0,r=void 0;for(e=0;32>e;e++)r=16*Math.random()|0,8!==e&&12!==e&&16!==e&&20!==e||(t+="-"),t+=(12===e?4:16===e?3&r|8:r).toString(16);return t},Cookie=function r(){classCallCheck(this,r)};Cookie.set=function(e,t){window.document.cookie=e+"="+t},Cookie.get=function(e){var t=null,r=e+"=",_=document.cookie,a=_.indexOf(r);if(-1!==a){var o=a+r.length,n=_.indexOf(";",o);-1===n&&(n=_.length),t=decodeURIComponent(_.substring(o,n))}return t};var collector=function(){for(var e=document.createElement("canvas"),t=e.getContext("webgl"),r={},_=0;_<Target.extensions.length;_++)r[Target.extensions[_]]=null!==t.getExtension(Target.extensions[_]);var a=!1;if(null===t.getExtension("WEBGL_color_buffer_float")){var o=t.createFramebuffer(),n=t.createTexture();t.bindFramebuffer(t.FRAMEBUFFER,o),t.bindTexture(t.TEXTURE_2D,n),t.texImage2D(t.TEXTURE_2D,0,t.RGBA,1,1,0,t.RGBA,t.FLOAT,null),t.framebufferTexture2D(t.FRAMEBUFFER,t.COLOR_ATTACHMENT0,t.TEXTURE_2D,n,0),a=t.checkFramebufferStatus(t.FRAMEBUFFER)===t.FRAMEBUFFER_COMPLETE,t.deleteTexture(n),t.deleteFramebuffer(o)}else a=!0;a&&(r.WEBGL_color_buffer_float=a);for(var E={},s=0;s<Target.parameters.length;s++)if("MAX_VIEWPORT_DIMS"===Target.parameters[s]){var i=t.getParameter(t[Target.parameters[s]]);E[Target.parameters[s]+"_0"]=i[0],E[Target.parameters[s]+"_1"]=i[1]}else E[Target.parameters[s]]=t.getParameter(t[Target.parameters[s]]);var T=navigator.userAgent,l=null===Cookie.get("key")?uuid():Cookie.get("key");Cookie.set("key",l);var u={id:l,user:T,extensions:r,parameters:E,domain:document.domain},f=new XMLHttpRequest;f.open("POST","http://wglstat.grimoire.gl/record"),f.setRequestHeader("Content-Type","application/json"),f.send(JSON.stringify(u))};collector();
+  </script>
+</head>
+
+<body>
+  
+    <header id="header">
+  <a id="logo-wrap" href="/">
+    <div id="logo-icon"></div>
+    <div id="logo-font"></div>
+  </a>
+  <nav>
+    <ul id="menu">
+      <li><a href="/guide">Guide</a></li>
+      <li><a href="/tips">Tips</a></li>
+      <li><a href="/api">API</a></li>
+      <li><a href="/">PlayGround</a></li>
+      <li><a href="https://github.com/GrimoireGL/GrimoireJS">Github</a></li>
+    </ul>
+  </nav>
+</header>
+
+    <div id="main">
+      
+<div id="column-wrap">
+  <aside id="sidebar">
+  <div id="doc-title">API</div>
+  <ul id="list">
+    
+      <li class="active">
+        <a href="/api/index.html">Top-Level API</a>
+      </li>
+    
+  </ul>
+</aside>
+
+  <div id="content">
+    <h1 id="content-title">Top-Level API</h1>
+    <p>Grimoire.jsを初めて用いる際、最初にいじるjavascriptのAPIはおそらくこれらのトップレベルAPIでしょう。 これらのAPIによってユーザーはい自身のサービスのロジックにマッチした形で3Dのビュー部分を操作することが容易になります。</p>
+<p><img src="./images/top-level-interface.png" alt="top-level-interface"></p>
+<p>トップレベルのAPIは以上の図のように主に4つに分割され、それぞれ役割が異なります。</p>
+<h2 id="GrimoireInterface"><a href="#GrimoireInterface" class="headerlink" title="GrimoireInterface"></a>GrimoireInterface</h2><p>主に<strong>特定のGOMLソースに依存しない</strong>対象に対して操作するAPIを提供します。</p>
+<p><strong>例</strong></p>
+<ul>
+<li>registerNodeメソッド</li>
+<li>registerComponentメソッド</li>
+<li>…etc</li>
+</ul>
+<p>GrimoireInterfaceは<code>&lt;script&gt;</code>タグを用いて単にWebページにロードされている場合、<code>window.gr</code>に代入されます。</p>
+<p>GrimoireInterfaceはnpmを用いて以下のようにしても取得することができます。この場合window以下を汚染することなくGrimoireInterfaceが利用可能です。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> gr = <span class="built_in">require</span>(<span class="string">"grimoirejs"</span>);</div></pre></td></tr></table></figure>
+<h3 id="gr-selector"><a href="#gr-selector" class="headerlink" title="gr(selector)"></a>gr(selector)</h3><ul>
+<li><p><strong>定義</strong></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">gr</span>(<span class="params">selector: <span class="built_in">string</span></span>): <span class="title">GOMLInterface</span></span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>使い方</strong></p>
+<p>GrimoireInterfaceは関数としてセレクタを渡すことができます。 このセレクタはGOMLを選択するための記法であり、<code>text=&quot;text/goml&quot;</code>の指定されているノードを取得するためのセレクタを指定します。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> theCanvas = gr(<span class="string">"script.mainCanvas"</span>);</div></pre></td></tr></table></figure>
+<p>例えば、上記の例では<code>mainCanvas</code>クラスが指定されたscriptタグ全てが結びついているGOMLに対して処理をするインターフェースが取得されます。</p>
+<blockquote>
+<p>注意:</p>
+<p>取得される操作対象のGOMLが一つとは限らない事に気をつけてください。 取得する対象が<code>canvas</code>ではなく<code>script</code>である事に注意してください。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="gr-ns-namespace"><a href="#gr-ns-namespace" class="headerlink" title="gr.ns(namespace)"></a>gr.ns(namespace)</h3><ul>
+<li><p><strong>定義</strong></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ns</span>(<span class="params"><span class="keyword">namespace</span>: <span class="built_in">string</span></span>): (<span class="params">name: <span class="built_in">string</span></span>) =&gt; <span class="title">NamespacedIdentity</span></span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>使い方:</strong></p>
+<p>nsメソッドはGrimoire.jsが用いる各ノードやコンポーネントなどの名前の識別のために名前空間を用いるために使います。</p>
+<p>自分以外の人が用いるであろうコンポーネントやノードを作成する場合、名称が被って競合するのを防ぐために利用する必要があるでしょう。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> g = gr.ns(<span class="string">"http://grimoire.gl/ns/sample"</span>);</div><div class="line"><span class="keyword">var</span> id = g(<span class="string">"TEST"</span>); <span class="comment">//完全修飾名 TEST|HTTP://GRIMOIRE.GL/NS/SAMPLEを意味するオブジェクトとなる。</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="registerComponent"><a href="#registerComponent" class="headerlink" title="registerComponent"></a>registerComponent</h3><ul>
+<li><p><strong>定義</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">interface IAttributeDeclaration &#123;</div><div class="line">  converter: string | NamespacedIdentity;</div><div class="line">  defaultValue: any;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function registerComponent(</div><div class="line">  name: string | NamespacedIdentity,</div><div class="line">  attributes: &#123; [name: string]: IAttributeDeclaration &#125;,</div><div class="line">  component: Object | (new () =&gt; Component)</div><div class="line">): void;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>使い方</strong></p>
+<p>指定した名称のコンポーネントを追加します。 引数<code>name</code>が<code>NamespacedIdentity</code>として指定されると、名前空間を含んだタグとして区別されます。 一方で引数<code>name</code>が<code>string</code>である際は名前空間を<strong>デフォルト名前空間</strong>として処理します。</p>
+<p>引数<code>attributes</code>はこのコンポーネントが公開する属性です。これは値として<code>IAttributeDeclaration</code>を持つプレーンオブジェクトです。このプレーンオブジェクトのkeyが属性名として用いられます。(常に名前空間はこのコンポーネントの名前空間です。)<br>ユーザーはこのattributesに指定されている属性に対してGOMLを通じて代入したりattrメソッドなどを通じて値を操作できたりします。</p>
+<p>引数<code>component</code>は新しく登録したいコンポーネントの<code>コンストラクタとなる関数</code>もしくは<code>プレーンオブジェクト</code>です。 ただし、プレーンオブジェクトはメソッド内部でコンストラクタに変換します。また、コンストラクタを指定する場合はそのコンストラクタのスーパークラスにComponentが入っていなければなりません。</p>
+</li>
+</ul>
+<h3 id="registerNode"><a href="#registerNode" class="headerlink" title="registerNode"></a>registerNode</h3><ul>
+<li><p><strong>定義</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function registerNode(</div><div class="line">  name: string | NamespacedIdentity,</div><div class="line">  requiredComponents: (string | NamespacedIdentity)[],</div><div class="line">  defaultValues?: &#123; [key: string]: any &#125; | NamespacedDictionary&lt;any&gt;,</div><div class="line">  superNode?: string | NamespacedIdentity,</div><div class="line">  requiredComponentsForChildren?: (string | NamespacedIdentity)[]</div><div class="line">): void</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>使い方</strong></p>
+<p>新たに指定した名称のノードを追加します。引数<code>name</code>が<code>NamespacedIdentity</code>として指定されると、名前空間を含んだタグとして区別されます。一方で引数<code>name</code>が<code>string</code>である際は名前空間を<strong>デフォルト名前空間</strong>として処理します。</p>
+<p>引数<code>requiredComponents</code>はその名称のノードが初期状態のときに保持するコンポーネントの配列を持ちます。この配列は要素として<code>string</code>もしくは<code>NamespacedIdentity</code>を持つことができます。 この配列を受け取った際、<code>string</code>な要素は自動的に名前空間を<strong>デフォルト名前空間</strong>として処理します。</p>
+<p>引数<code>defaultValues</code>はこのノードの各属性の初期値を表します。この引数に対して単なるプレーンオブジェクトすなわち<code>{[key: string]: any}</code>を渡した場合は、<code>key</code>を属性名として解釈し、属性の名前空間として<strong>ノードの名前空間</strong>を用います。もし、ノードの名前空間外の属性に対して初期値を割り当てたい場合は<code>NamespacedDictionary&lt;any&gt;</code>を用いてこの引数を割り当てます。</p>
+<blockquote>
+<p>デフォルト値の割り当て優先順位:</p>
+<p>あるノードが読み込まれた時に属性に割り当てられる値は以下の優先順位に従って割り当てられます。</p>
+<p><code>GOMLによる指定 &gt; registerNode内のdefaultValuesによる指定 &gt; registerComponent内のattributesによる指定</code></p>
+<p>すなわち、初期ロード時にGOMLに記述されていない属性についてはregisterNode内のdefaultValuesが検索され、それも見つからない場合はregisterComponent内のattributesから初期値をロードします。</p>
+</blockquote>
+<p>引数<code>superNode</code>はこのノードが設定を継承する元のノード名を指定します。この引数が指定されると、<code>superNode</code>に対応付いたノードの<code>requiredComponents</code>,<code>defaultValues</code>,<code>requiredComponentsForChildren</code>が再帰的に引き継がれます。</p>
+<p>引数<code>requiredComponentsForChildren</code>はこのノードの子ノードに指定されるノードに要求するコンポーネントの名称のリストを受け取ります。 この要素が指定されると、このノード以下の子ノードとしてGOML内などに記述されるすべての要素は指定されたコンポーネントを所持している必要があります。</p>
+</li>
+</ul>
+<h2 id="GOMLInterface"><a href="#GOMLInterface" class="headerlink" title="GOMLInterface"></a>GOMLInterface</h2><p>主に<strong>特定のNodeに依存せず、特定のGOMLのソースに依存する</strong>対象に対して操作するAPIを提供します。</p>
+<p><strong>例</strong></p>
+<ul>
+<li>sharedObjectフィールド</li>
+<li>rootNodeフィールド</li>
+<li>…etc</li>
+</ul>
+<h3 id="関数として呼んだ場合"><a href="#関数として呼んだ場合" class="headerlink" title="関数として呼んだ場合"></a>関数として呼んだ場合</h3><h2 id="NodeInterface"><a href="#NodeInterface" class="headerlink" title="NodeInterface"></a>NodeInterface</h2><p>主に<strong>特定のNode</strong>に対して操作するAPIを提供します。</p>
+<p><strong>例</strong></p>
+<ul>
+<li>appendメソッド</li>
+<li>getComponentメソッド</li>
+<li>…etc</li>
+</ul>
+<h3 id="関数として呼んだ場合-1"><a href="#関数として呼んだ場合-1" class="headerlink" title="関数として呼んだ場合"></a>関数として呼んだ場合</h3><h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><h3 id="append"><a href="#append" class="headerlink" title="append"></a>append</h3><h3 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h3><h3 id="attr"><a href="#attr" class="headerlink" title="attr"></a>attr</h3><h3 id="children"><a href="#children" class="headerlink" title="children"></a>children</h3><h3 id="addComponent"><a href="#addComponent" class="headerlink" title="addComponent"></a>addComponent</h3><h3 id="removeComponent"><a href="#removeComponent" class="headerlink" title="removeComponent"></a>removeComponent</h3><h2 id="ComponentInterface"><a href="#ComponentInterface" class="headerlink" title="ComponentInterface"></a>ComponentInterface</h2><p>主に<strong>特定のNodeに属しているコンポーネント</strong>に対する処理に利用します。</p>
+<ul>
+<li>attrメソッド</li>
+<li>onメソッド</li>
+<li>…etc</li>
+</ul>
+<h3 id="attr-1"><a href="#attr-1" class="headerlink" title="attr"></a>attr</h3><h3 id="get"><a href="#get" class="headerlink" title="get"></a>get</h3><h3 id="destroy"><a href="#destroy" class="headerlink" title="destroy"></a>destroy</h3>
+    <div id="edit-page">
+      <a href="https://github.com/GrimoireGL/grimoire.gl/blob/master/source/api/index.md" target="_blank">Edit this page on Github</a>
+    </div>
+  </div>
+</div>
+
+    </div>
+  
+</body>
+</html>
